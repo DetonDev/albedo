@@ -137,6 +137,7 @@ l,o,o,o,o,o,o,o,o,o,o,o,o,o,o,l
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 NAME Dream
+ITM 2 14,10
 EXT 1,10 3 6,5 FX fade_w
 PAL 0
 
@@ -465,19 +466,6 @@ DLG SPR_1
 POS 3 6,3
 COL 4
 
-SPR i
-00000000
-01111110
-00000100
-00001000
-00010000
-00100000
-01111110
-00000000
-NAME dreamz
-DLG SPR_6
-POS 4 14,10
-
 SPR j
 00000000
 11111111
@@ -538,6 +526,7 @@ SPR m
 01111110
 00000000
 NAME florashelf
+DLG SPR_6
 POS 5 6,6
 COL 7
 
@@ -576,10 +565,22 @@ NAME nest
 DLG ITM_1
 COL 5
 
+ITM 2
+00000000
+01111110
+00000100
+00001000
+00010000
+00100000
+01111110
+00000000
+NAME dreamz
+DLG ITM_2
+
 DLG SPR_0
 """
 Your scout ship stands in the snow, ready to be loaded with the scientific samples you are to collect during your stay.
-KAYUNNILIK CRYSTAL SAMPLES:
+PILIUN CRYSTAL SAMPLES:
 ({say crystal}/100)
 WILDLIFE GENETIC SAMPLES:
 ({say genetic}/25)
@@ -604,7 +605,7 @@ Curiosity Base: (X? Y?)
 """
 
 DLG ITM_0
-{crystal = crystal + 1}You extract a sample of Kayunnilik crystal. ({say crystal}/100)
+{crystal = crystal + 1}You extract a sample of Piliun crystal. ({say crystal}/100)
 
 DLG SPR_1
 """
@@ -613,16 +614,7 @@ You feel much better now!
 """
 
 DLG ITM_1
-{genetic =+ 1}You found a nest belonging to one of Osha's creatures! You scan the nest and find genetic samples to collect. ({say genetic}/25)
-
-DLG SPR_6
-"""
-{shuffle
-  - You dream of a cave, nestled in snow-covered mountains, where a large, mysterious bird sleeps in it's nest.
-  - You dream of a horrifying humanoid entity with rough green skin, a woolly jacket and long black hair rising up out of the frigid waters, poised to strike.
-  - You dream about you dreaming about you dreaming about you d...
-}
-"""
+{genetic =+ 1}You found a nest belonging to one of Adlivun's creatures! You scan the nest and find genetic samples to collect. ({say genetic}/25)
 
 DLG SPR_7
 You can't leave until you've checked on the researchers and collected all of the requested scientific samples and data!
@@ -630,15 +622,15 @@ You can't leave until you've checked on the researchers and collected all of the
 DLG SPR_8
 """
 {cycle
-  - This bookshelf contains your books about the fauna of Osha.
+  - This bookshelf contains a book about the creatures of Adlivun.
     (Interact again to read)
-  - A GUIDE TO THE FAUNA OF OSHA
+  - A GUIDE TO THE FAUNA OF ADLIVUN
     by Emma Isumatturuk, PhD.
 
   - Chapter 1: The Ukpik.
-    The Ukpik is a heavy-set bird, slightly larger than a condor back on Earth, with facial features similar to an owl. The bird has an arsenal of methods it uses to stay alive in the harsh frost of Osha, ranging from it's incredibly fluffy feathers, which are used to trap insulating pockets of air around it's body. One of it's best tactics is how it flies the body of it's downed prey back to it's cave nest, where it's meat is quickly packed into the snow to be preserved for when the bird needs a meal. Yummy! It's most notable feature, however, is that it can digest Kayunnilik crystals. After swallowing one, it's digestive system slowly breaks the crystal down into its natural components, giving more energy for the bird. For this reason, the Ukpiks stock their caves with Kayunnilik crystals to digest when they are ready for it!
+    The Ukpik is a heavy-set bird, slightly larger than a condor back on Earth, with facial features similar to an owl. The bird has an arsenal of methods it uses to stay alive in the harsh frost of Adlivun, ranging from it's incredibly fluffy feathers, which are used to trap insulating pockets of air around it's body. One of it's best tactics is how it flies the body of it's downed prey back to it's cave nest, where it's meat is quickly packed into the snow to be preserved for when the bird needs a meal. Yummy! It's most notable feature, however, is that it can digest Piliun crystals. After swallowing one, it's digestive system slowly breaks the crystal down into its natural components, giving more energy for the bird. For this reason, the Ukpiks stock their caves with Kayunnilik crystals to digest when they are ready for it!
   - Chapter 2: The Qalupalik.
-    The secretive Qalupalik is a water-dwelling, humanoid, extraterrestrial being found on Osha. It has been confirmed to be sentient. The rest of the creature's species has gone extinct, likely due to it's relatively inefficient method of catching prey on the shore from the water, as well as its massive body, which requires a large quantity of nutrients to support itself. However, because of it's high swimming speeds, as well as it's powerful hunting capabilities, the Qalupalik is a powerful threat to any living entity that dares to walk near certain shores of Osha. All attempts to capture it have failed as of yet.
+    The secretive Qalupalik is a water-dwelling, humanoid, extraterrestrial being found on Adlivun. It has been confirmed to be sentient. The rest of the creature's species has gone extinct, likely due to it's relatively inefficient method of catching prey on the shore from the water, as well as its massive body, which requires a large quantity of nutrients to support itself. However, because of it's high swimming speeds, as well as it's powerful hunting capabilities, the Qalupalik is a powerful threat to any living entity that dares to walk near certain shores of Adlivun. All attempts to capture it have failed as of yet.
 }
 """
 
@@ -646,6 +638,29 @@ DLG SPR_5
 """
 You use the ship's shower. The dirt on your body washes off with the droplets and is then taken to be recycled into fuel for the ship.
 Refreshing! 
+"""
+
+DLG ITM_2
+"""
+{shuffle
+  - You dream of a cave, nestled in snow-covered mountains, where a large, mysterious bird sleeps in it's nest.
+  - You dream of a horrifying humanoid entity with rough green skin, a woolly jacket and long black hair rising up out of the frigid waters, poised to strike.
+  - You dream about you dreaming about you dreaming about you d...
+  - You dream of making your way through a valley, completely buried by the frigid snow, trying not to sink in.
+  - You dream of a wrecked building, with frozen bodies littered across the snow.
+}
+"""
+
+DLG SPR_6
+"""
+{cycle
+  - This bookshelf contains books about the plant life of Adlivun.
+    (Interact again to read)
+  - A GUIDE TO THE FLORA OF ADLIVUN
+    by Liam Aijatkuk
+  - Chapter 1: The Piliun crystal.
+
+}
 """
 
 VAR crystal
@@ -8917,6 +8932,7 @@ CHAR 255
 010010
 000000
 000000
+</script>
 </script>
 </script>
 </script>
